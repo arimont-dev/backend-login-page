@@ -20,6 +20,12 @@ app.use("/api/auth", AuthRouter)
 
 app.get("/")
 
+app.get("/health", (req,res) => {
+    res.status(200).json({
+        ok: true
+    })
+})
+
 app.listen(process.env.PORT, () => {
     console.log(`servidor rodando http://localhost:${process.env.PORT}`)
 })
